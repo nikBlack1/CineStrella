@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {{ vampire_title }}
+{% endblock %}
+
+
+{% block castle_css %}
+    <link rel="stylesheet" href="{% static 'vampireCastle/styles/vampire.css' %}">
+{% endblock %}
+
+{% block page_content %}
+    {% if vampire_found == True %}
+    <div class="vampire-wrapper">
+        <img src="{{ vampire_img }}" alt="vampire.png">
+        <div class="vampire-content">
+            <h2><span class="name-label"></span>{{ vampire_name }}</h2>
+            <h3 class="title-label">{{ vampire_title }}</h3>
+        </div>
+    </div>
+    {% elif vampire_found == False %}
+        <p>No such vampire found!</p>
+    {% endif %}
+{% endblock %}
+
+

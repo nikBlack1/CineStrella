@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', serif;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+.section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-block {
+
+}
+
+.header-block h2 {
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 2.3em;
+}
+
+.header-block span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+}

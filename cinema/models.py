@@ -171,6 +171,12 @@ class Hall(models.Model):
 
 
 class Movie(models.Model):
+
+    MOVIE_STATUS = (
+        ('on', 'Ongoing'),
+        ('com', 'Coming'),
+        ('off', 'Past'),
+    )
     name = models.CharField(max_length=200)
     age_rating = models.IntegerField()
     duration = models.IntegerField()
@@ -178,6 +184,7 @@ class Movie(models.Model):
     cast = models.CharField(max_length=100)
     poster = models.ImageField(upload_to='images')
     description = models.TextField(max_length=500)
+    status = models.CharField(max_length=15, choices=MOVIE_STATUS, default=MOVIE_STATUS[1])
 
     def __str__(self):
         return f'{self.name}'

@@ -1,0 +1,30 @@
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Castle default title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'cinema/styles/base/base.css' %}">
+    <link rel="stylesheet" href="{% static 'cinema/styles/base/header.css' %}">
+    <link rel="stylesheet" href="{% static 'cinema/styles/base/footer.css' %}">
+    {% block cinema_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% include 'base/header.html' %}
+    </header>
+
+    <main>
+        {% block page_content %}Ups! Something went wrong! The content wasn't loaded.{% endblock %}
+    </main>
+
+    <footer>
+        {% include 'base/footer.html' %}
+    </footer>
+</body>
+</html>

@@ -9,8 +9,8 @@ models = apps.get_models()
 
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ('name', 'age_rating', 'duration')
-    list_filter = ('age_rating',)
+    list_display = ('name', 'age_rating', 'duration', 'status')
+    list_filter = ('age_rating', 'status')
 
 
 class EventAdmin(admin.ModelAdmin):

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cinema{% endblock %}
+
+{% block page_content %}
+    <div class="section">
+        <div class="movie-program-wrapper">
+
+            <div class="header-block">
+                <h2>Movie program</h2>
+                <span>in Dortburg now</span>
+            </div>
+
+            <div class="program-block">
+                {% for vampire in vampires_list %}
+                    {% include 'includes/vampire_tile.html' with title=vampire.title name=vampire.name slug=vampire.slug image=vampire.image.url %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+

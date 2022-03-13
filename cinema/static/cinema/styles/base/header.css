@@ -1,0 +1,21 @@
+header {
+    background: #F15A28;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 6em;
+}
+
+.header-links, .logo {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+

@@ -1,13 +1,14 @@
 from django.shortcuts import render
+from .models import *
 
 
 # Create your views here.
 
 
 def index(request):
-    # vampires = Vampire.objects.all()
-    return render(request, 'index.html', {
-        # 'vampires_list': vampires
+    movies = Movie.objects.all()
+    return render(request, 'pages/index.html', {
+        'movie-list': movies
     })
 
 

@@ -1,14 +1,28 @@
 from django.contrib import admin
-# from .models import Vampire, Weapon
-
+from django.apps import apps
+from .models import *
 
 # Register your models here.
 
-# class CastleAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'title', 'weapon')
-#     list_filter = ('weapon', 'title',)
-#     prepopulated_fields = {'slug': ('title', 'name')}
-#
-#
-# admin.site.register(Vampire, CastleAdmin)
-# admin.site.register(Weapon)
+
+models = apps.get_models()
+
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ('name', 'age_rating', 'duration')
+    list_filter = ('age_rating',)
+
+
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('film', 'week_day', 'time_slot', 'hall')
+    list_filter = ('week_day', 'time_slot', 'hall')
+
+
+admin.site.register(Movie, MovieAdmin)
+admin.site.register(Event, EventAdmin)
+
+for model in models:
+    try:
+        admin.site.register(model)
+    except admin.sites.AlreadyRegistered:
+        pass

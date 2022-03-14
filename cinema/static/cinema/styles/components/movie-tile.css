@@ -1,0 +1,72 @@
+.movie-tile {
+    max-width: 15em;
+}
+
+.poster-wrapper {
+    width: 100%;
+}
+
+img.poster {
+
+}
+
+.interface-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+    gap: 0.5em;
+}
+
+.interface-wrapper a {
+    text-align: center;
+    padding: 0.5em 1em;
+    transition: 0.3s;
+}
+
+.interface-wrapper a.link-more {
+    background-color: #16215b;
+    color: white;
+}
+.interface-wrapper a.link-reserve {
+    background-color: #F15A28;
+    color: white;
+}
+
+.interface-wrapper a.link-more:hover {
+    background-color: #0c1333;
+}
+.interface-wrapper a.link-reserve:hover {
+    background-color: #8f3719;
+}
+
+.interface-wrapper .link-more {
+    width: 40%;
+}
+
+.interface-wrapper .link-reserve {
+    width: 60%;
+}
+
+.poster {
+    width: 100%;
+}
+
+.info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5em 0
+}
+
+.info-wrapper span {
+    font-size: 1em;
+}
+
+.movie-tile h3.movie-title {
+    width: 100%;
+    font-size: 1.5em;
+    text-align: left;
+    margin-top: 0.1em;
+}

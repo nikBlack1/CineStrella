@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cinema_css %}
+    <link rel="stylesheet" href="{% static 'cinema/styles/pages/movie_information.css' %}">
+{% endblock %}
+
+{% block title %}Movies{% endblock %}
+
+{% block page_content %}
+    <div class="emotion">
+        <img src="{% block emotion_img %}{% endblock %}" alt="emotion.png">
+    </div>
+    <div class="section movie-information-block">
+        <div class="tech-info-wrapper">
+            <img src="" alt="">
+            <div class="tech-info">
+                <div class="header-block">
+                    <span>Movie information</span>
+                    <h2>{% block movie_name %}{% endblock %}</h2>
+                </div>
+                <div class="tech-info-list">
+                    <div class="info-row"><span>{% block age %}{% endblock %}</span></div>
+                    <div class="info-row"><span>Duration:</span><span>{% block duration %}{% endblock %}</span></div>
+                    <div class="info-row"><span>Genre:</span><span>{% block genre %}{% endblock %}</span></div>
+                    <div class="info-row"><span>Cast</span>:<span>{% block cast %}{% endblock %}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="description-wrapper">
+            <p>{% block description %}{% endblock %}</p>
+            <a href="#">Reserve</a>
+        </div>
+    </div>
+{% endblock %}
+

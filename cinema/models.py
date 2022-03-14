@@ -178,11 +178,12 @@ class Movie(models.Model):
         ('off', 'Past'),
     )
     name = models.CharField(max_length=200)
+    slug = models.SlugField()
     age_rating = models.IntegerField()
     duration = models.IntegerField()
     genre = models.CharField(max_length=200)
     cast = models.CharField(max_length=100)
-    poster = models.ImageField(upload_to='images')
+    poster = models.ImageField(upload_to='images/posters')
     description = models.TextField(max_length=500)
     status = models.CharField(max_length=15, choices=MOVIE_STATUS, default=MOVIE_STATUS[1])
 
@@ -234,3 +235,4 @@ class Event(models.Model):
 
     def __str__(self):
         return f'{self.film.name}'
+

@@ -11,6 +11,7 @@ models = apps.get_models()
 class MovieAdmin(admin.ModelAdmin):
     list_display = ('name', 'age_rating', 'duration', 'status')
     list_filter = ('age_rating', 'status')
+    prepopulated_fields = {'slug': ('name',)}
 
 
 class EventAdmin(admin.ModelAdmin):

@@ -1,3 +1,11 @@
 .movie-program-wrapper {
 
 }
+
+.program-block {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4em;
+    justify-content: space-between;
+    padding: 1em 0;
+}

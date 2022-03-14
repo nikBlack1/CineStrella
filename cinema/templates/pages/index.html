@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block cinema_css %}
+    <link rel="stylesheet" href="{% static 'cinema/styles/pages/index.css' %}">
+{% endblock %}
+
+
+
 {% block title %}Cinema{% endblock %}
 
 {% block page_content %}
@@ -13,8 +19,8 @@
             </div>
 
             <div class="program-block">
-                {% for vampire in vampires_list %}
-                    {% include 'includes/vampire_tile.html' with title=vampire.title name=vampire.name slug=vampire.slug image=vampire.image.url %}
+                {% for movie in movie_list %}
+                    {% include 'components/movie-tile.html' with image=movie.poster.url genre=movie.genre age=movie.age_rating title=movie.name %}
                 {% endfor %}
             </div>
 

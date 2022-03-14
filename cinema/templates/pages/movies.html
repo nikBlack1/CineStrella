@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cinema_css %}
+    <link rel="stylesheet" href="{% static 'cinema/styles/pages/index.css' %}">
+{% endblock %}
+
+
+
+{% block title %}Movies{% endblock %}
+
+{% block page_content %}
+    <div class="section">
+        <div class="movie-program-wrapper">
+            <div class="header-block">
+                <h2>Movie program</h2>
+                <span>in Dortburg now</span>
+            </div>
+
+            <div class="program-block">
+                {% for movie_on in movies_on %}
+                    {% include 'components/movie-tile.html' with image=movie_on.poster.url genre=movie_on.genre age=movie_on.age_rating title=movie_on.name %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="movie-program-wrapper">
+            <div class="header-block">
+                <h2>Coming soon</h2>
+            </div>
+
+            <div class="program-block">
+                {% for movie_com in movies_com %}
+                    {% include 'components/movie-tile.html' with image=movie_com.poster.url genre=movie_com.genre age=movie_com.age_rating title=movie_com.name %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

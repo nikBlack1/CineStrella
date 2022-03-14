@@ -6,21 +6,33 @@ from .models import *
 
 
 def index(request):
-    movies = Movie.objects.all()
+    movies_list = Movie.objects.filter(status="on")
+    pages = Page.objects.all()
     return render(request, 'pages/index.html', {
-        'movie-list': movies
+        'pages': pages,
+        'movie_list': movies_list
     })
 
 
-# def vampire_profile(request, vampire_slug):
-#     try:
-#         selected_vampire = Vampire.objects.get(slug=vampire_slug)
-#         return render(request, 'vampire.html', {
-#             'vampire_found': True,
-#             'vampire_name': selected_vampire.name,
-#             'vampire_title': selected_vampire.title
-#         })
-#     except Exception as exc:
-#         return render(request, 'vampire.html', {
-#             'vampire_found': False
-#         })
+def movies(request):
+    movies_on = Movie.objects.filter(status="on")
+    movies_com = Movie.objects.filter(status="com")
+    pages = Page.objects.all()
+
+    return render(request, 'pages/movies.html', {
+        'pages': pages,
+        'movies_on': movies_on,
+        'movies_com': movies_com
+    })
+
+
+def movie_information(request, slug):
+    try:
+        selected_film = Movie.objects.get(name=slug)
+        return render(request, 'pages/movie_information.html', {
+            'lolo': selected_film.name
+        })
+    except Exception as exc:
+        return render(request, 'pages/movie_information.html', {
+            'vampire_found': False
+        })

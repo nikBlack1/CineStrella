@@ -29,3 +29,13 @@ a {
     font-weight: 400;
     font-size: 1em;
 }
+
+.logo img {
+    width: 10em;
+}
+
+.emotion {
+    width: 100%;
+    max-height: 15em;
+    aspect-ratio: 2/1;
+}

@@ -1,7 +1,9 @@
+{% load static %}
+
 <div class="header-content">
-    <a href="#" class="logo"><img src="" alt="logo.svg"></a>
+    <a href="{% url 'Home' %}" class="logo"><img src="{% static 'cinema/images/CineStrella.svg' %}" alt="logo.svg"></a>
     <div class="header-links">
-        <a href="#">Movies</a>
+        <a href="{% url 'Movies' %}">Movies</a>
         <a href="#">About CineStrella</a>
     </div>
 </div>
